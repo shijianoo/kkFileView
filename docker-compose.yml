@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  kkfileview:
+    image: shioa/kkfileview:5.0.3
+    container_name: kkfileview
+    restart: always
+    
+    ports:
+      - "8012:8012"
+    volumes:
+      - ./config/application.properties:/opt/kkFileView-5.0.3/config/application.properties:ro
+      - ./kkfileview-data:/opt/kkFileView-5.0.3/file
